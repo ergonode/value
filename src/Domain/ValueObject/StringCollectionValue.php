@@ -2,7 +2,7 @@
 
 /**
  * Copyright © Bold Brand Commerce Sp. z o.o. All rights reserved.
- * See license.txt for license details.
+ * See LICENSE.txt for license details.
  */
 
 declare(strict_types = 1);
@@ -13,7 +13,7 @@ use JMS\Serializer\Annotation as JMS;
 
 /**
  */
-class CollectionValue extends AbstractValue implements ValueInterface
+class StringCollectionValue implements ValueInterface
 {
     public const TYPE = 'string_collection';
 
@@ -33,7 +33,9 @@ class CollectionValue extends AbstractValue implements ValueInterface
     }
 
     /**
-     * @return string
+     * {@inheritDoc}
+     *
+     * @JMS\VirtualProperty()
      */
     public function getType(): string
     {
@@ -49,7 +51,7 @@ class CollectionValue extends AbstractValue implements ValueInterface
     }
 
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function __toString(): string
     {
